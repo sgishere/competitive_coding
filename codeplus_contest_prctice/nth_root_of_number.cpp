@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+
+#define ll long long
+#define pb push_back
+#define ff first
+#define ss second
+
+#define lop(n) for (int i = 0; i < n; i++)
+#define lopj(n) for (int j = 0; j < n; j++)
+
+#define all(x) x.begin(), x.end()
+#define sortd(x) sort(x.rbegin(), x.rend())
+#define bitcount(x) __builtin_popcount(x)
+
+#define vin vector <int>
+#define vll vector <ll>
+#define pll pair <ll, ll>
+#define pii pair <int, int>
+#define vpll vector <pll>
+
+using namespace std;
+double multiply(double x,double y)
+{double num= 1;
+    lop(y)
+    {
+        num=num*x;
+    }
+    return num;
+}
+int main()
+{
+    ios_base::sync_with_stdio(0); 
+    cin.tie(0);
+
+    int N;
+    cin>>N;
+    int z;
+    cout<<"Which xth root u want boi??\n";
+    cin>>z;
+
+    double low=1;
+    double high=N;
+    
+    double accuracy=1e-7;
+    while(high-low>accuracy)
+    {   
+        double mid=(low+high)/2.0;
+        if(multiply(mid,z)<N)
+            low=mid;
+        else
+            high=mid;
+    }
+    cout<<low<<endl;
+return 0;
+
+}

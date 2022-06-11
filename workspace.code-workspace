@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../c++ things"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"vector": "cpp",
+			"utility": "cpp",
+			"iostream": "cpp",
+			"iosfwd": "cpp",
+			"ostream": "cpp",
+			"map": "cpp",
+			"unordered_map": "cpp",
+			"random": "cpp"
+		}
+	}
+}

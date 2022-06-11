@@ -1,0 +1,1 @@
+arr[0]=INT_MIN;
