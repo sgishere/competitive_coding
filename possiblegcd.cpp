@@ -5,7 +5,7 @@
 #define ff first
 #define ss second
 
-#define lop(n) for (int i = 0; i < n; i++)
+#define lop(n) for (int i = 1; i <= n; i++)
 #define lopj(n) for (int j = 0; j < n; j++)
 
 #define all(x) x.begin(), x.end()
@@ -25,19 +25,25 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    int T;
+    ll T;
     cin>>T;
     while(T--){
-        int x,y;
-        cin>>x>>y;
-        int diff=abs(x-y);
+        ll abu,bbu;
+        cin>>abu>>bbu;
+        ll diff=abs(abu-bbu);
         // int lamba=1;
-        set<int>s;
-        lop(diff){
-            int yola=__gcd(x+i+1,y+i+1);
-            s.insert(yola);
+        vin v;
+        lop(sqrt(diff)){
+            if(diff%i==0){
+                diff/i==i?v.pb(1):v.pb(2);
+            }
         }
-        cout<<s.size()<<endl;
+        ll ans=0;
+        // cout<<s.size()<<endl;
+        lopj(v.size()){
+            ans+=v[j];
+        }
+        cout<<ans<<endl;
     }
 return 0;
 
