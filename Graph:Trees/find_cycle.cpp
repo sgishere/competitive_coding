@@ -24,7 +24,6 @@ bool vis[N];
 vector<int>graph[N];
 bool isLoopexists=false;
 
-
 bool dfs(int vertex,int parent){
    vis[vertex]=1;
     for(int child:graph[vertex]){
@@ -34,8 +33,6 @@ bool dfs(int vertex,int parent){
     }
     return isLoopexists;
 }
-
-
 
 int main()
 {

@@ -34,7 +34,7 @@ int main()
         graph[v1].pb(make_pair(v2,w));
         graph[v2].pb(make_pair(v1,w));
     }
-    for(vector<pair<int,int> : graph)
+    // for(vector<pair<int,int> : graph)
 return 0;
 
 }

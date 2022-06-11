@@ -26,6 +26,7 @@ int main()
     cin.tie(0);
 
     //GCD QUESTION
+    
 return 0;
 
 }
