@@ -19,46 +19,49 @@
 #define vpll vector <pll>
 
 using namespace std;
-const int N=1e5;
-bool vis[N];
+const int N=1e5+7;
+int visited[N];
 vector<int>graph[N];
-
-
-bool dfs(int vertex,int parent){
-   vis[vertex]=1;
-   bool isLoopexists=false;
+bool ans=0;
+void dfs(int vertex,int parent){
+    visited[vertex]=1;
     for(int child:graph[vertex]){
-        if(vis[child] and child==parent)continue;//M jha se aaya wapas usi ko point krra hun tho continue
-        if(vis[child])return true; // Agar M kisi aesi node ko point krra hun such that wo visited h aur wo parent bini h then definitely cycle is there.
-        isLoopexists|=dfs(child,vertex);
+        if(!visited[child]){
+            dfs(child,vertex);
+        }
+        else if(child!=parent){
+            ans=1;
+            break;
+        }
+        // else{
+        //     continue;
+        // }
     }
-    return isLoopexists;
 }
-
 int main()
 {
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
+
     int n,e;
     cin>>n>>e;
-    for(int i=1;i<=e;i++){
+    for(int i=0;i<e;i++){
         int v1,v2;
         cin>>v1>>v2;
         graph[v1].pb(v2);
         graph[v2].pb(v1);
     }
-    bool isloopexists=false;
     for(int i=1;i<=n;i++){
-        if(vis[i]){
-            continue;
-        }
-        if(dfs(i,0)){
-            isloopexists=true;
-            break;
+        if(!visited[i]){
+            dfs(i,-1);
         }
     }
-    isloopexists==1?cout<<"YES"<<endl:cout<<"NO"<<endl;
-    
+    if(ans==1){
+        cout<<"YES,Loop is there\n";
+    }
+    else{
+        cout<<"NO Loop\n";
+    }
 return 0;
 
 }

@@ -50,9 +50,12 @@ int main()
             mini=mini*2;
             ans++;
         }
-        mini>maxi?mini=mini/2,ans--:
-        // ans+=maxi;
-        mini==maxi?ans+=maxi:ans+=maxi+1;
+        // mini>maxi?mini=mini/2,ans--:
+        if(mini>maxi){
+            mini=mini/2;ans--;
+        }
+        ans+=maxi;
+        // mini==maxi?ans+=maxi:ans+=maxi+1;
         cout<<ans<<endl;
         }
     }
