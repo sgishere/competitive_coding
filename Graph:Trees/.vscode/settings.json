@@ -3,6 +3,7 @@
         "__locale": "cpp",
         "ios": "cpp",
         "ostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "valarray": "cpp"
     }
 }
