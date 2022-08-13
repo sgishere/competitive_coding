@@ -25,9 +25,25 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N;
+        cin>>N;
+        int arr[N];
+        lop(N){
+            cin>>arr[i];
+        }
+        reverse(arr,arr+N);
+        set<int>s;
+        lop(N){
+            if(s.find(arr[i])!=s.end()){
+                break;
+            }
+           s.insert(arr[i]);
+        }
+        cout<<N-s.size()<<endl;
+    }
 return 0;
 
 }

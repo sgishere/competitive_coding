@@ -25,9 +25,16 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    ll T;
+    cin>>T;
+    while(T--){
+        ll N;
+        cin>>N;
+        if(N&1)cout<<-1<<endl;
+        else{
+            cout<<N/2<<" "<<N/2<<" "<<0<<endl;
+        }
+    }
 return 0;
 
 }

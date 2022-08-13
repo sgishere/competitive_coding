@@ -19,15 +19,29 @@
 #define vpll vector <pll>
 
 using namespace std;
-
+// IN QUEUE STL WE 
+// PUSH-- ADD DATA AT THE END
+// POP-- DELETES DATA FROM BEGINNING
+// FRONT GIVES LEFTMOST ELEMENT
+// BACK GIVES RIGHTMOST ELEMENT
+void show_queue(queue<int>lola){
+    queue<int>v=lola;
+    while(!v.empty()){
+        cout<<v.front()<<" ";
+        v.pop();
+    }
+}
 int main()
 {
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    queue<int>q;
+    q.push(3);
+    q.push(69);
+    q.push(5);
+    q.push(8);
+    show_queue(q);
 return 0;
 
 }

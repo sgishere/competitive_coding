@@ -25,9 +25,26 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N;
+        cin>>N;
+        const int n=1e5+4;
+        int freq[n]={0};
+        int arr[N];
+        lop(N){cin>>arr[i];freq[arr[i]]++;}
+        int maxi=*max_element(freq,freq+N+1);
+        int maxi_el=max_element(freq,freq+N+1)-max_element(freq,freq);
+        if(!(maxi&1)){
+            freq[maxi_el]=maxi/2;
+        }
+        else{
+            freq[maxi_el]=maxi/2+1;
+        }
+        maxi=*max_element(freq,freq+N+1);
+        cout<<maxi<<endl;
+    }
 return 0;
 
 }

@@ -5,7 +5,7 @@
 #define ff first
 #define ss second
 
-#define lop(n) for (int i = 0; i < n; i++)
+#define lop(a,n) for (int i = a; i < n; i++)
 #define lopj(n) for (int j = 0; j < n; j++)
 
 #define all(x) x.begin(), x.end()
@@ -25,9 +25,18 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N;
+        cin>>N;
+        cout<<N<<" "<<N-1<<" ";
+        lop(1,N-2){
+            cout<<i<<" ";
+        }
+        cout<<N-2<<" ";
+        cout<<endl;
+    }
 return 0;
 
 }

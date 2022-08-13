@@ -25,9 +25,20 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N;
+        cin>>N;
+        int ans=1;
+        while(ans<N){
+            ans=ans*10;
+        }
+        ans=ans/10;
+        if(N==1 or N==1e1 or N==1e2 or N==1e3 or N==1e4 or N==1e5 or N==1e6 or N==1e7 or N==1e8 or N==1e9 or N==1e10)cout<<0<<endl;
+        else
+        cout<<N-ans<<endl;
+    }
 return 0;
 
 }

@@ -1,61 +1,53 @@
 #include <bits/stdc++.h>
-using namespace std;
 
-void printbinary(int num)
-{
-    for (int i = 10; i >= 0; i--)
-    {
-        cout << ((num >> i) &1);
-    }
-    cout << endl;
-}
-void iskthbitset(int n,int k){
-    if((n>>(k-1))&1)
-    cout<<"set\n";
-    else cout<<"not set\n";
-}
+#define ll long long
+#define pb push_back
+#define ff first
+#define ss second
+
+#define lop(n) for (int i = 0; i < n; i++)
+#define lopj(n) for (int j = 0; j < n; j++)
+
+#define all(x) x.begin(), x.end()
+#define sortd(x) sort(x.rbegin(), x.rend())
+#define bitcount(x) __builtin_popcount(x)
+
+#define vin vector <int>
+#define vll vector <ll>
+#define pll pair <ll, ll>
+#define pii pair <int, int>
+#define vpll vector <pll>
+
+using namespace std;
 
 int main()
 {
+	ios_base::sync_with_stdio(0); 
+	cin.tie(0);
 
-    int a;
-    cin >> a;
-    printbinary(a);
-    int i;
-    cin >> i;
-  //  iskthbitset(13,3);
-    if ((a & (1 << i)) != 0)
-    {
-        cout << "set bit" << endl;
-    }
-    else
-    {
-        cout << "not set bit" << endl;
-    }
+	int T;
+	cin>>T;
+	while(T--){
+		int N;
+		cin>>N;
+		int arr[N];
+		lop(N){
+			cin>>arr[i];
+		}
+		int x=arr[N-1];
+		int j=0;
+		for(int i=N-1;i>=0;i--){
+			if(arr[i]<arr[i-1]){
+				j=i;
+				break;
+			}
+		}
+		set<int>s;
+		lop(j+1){
+			s.insert(arr[i]);
+		}
+		cout<<s.size()<<endl;
+	}
+return 0;
 
-    // ith bit to set
-
-    printbinary(a | (1 << i));
-
-    // ith bit to unset
-
-    printbinary(a & (~(1 << i)));
-
-    // toggle
-
-    printbinary(a ^ (1 << 2));
-    printbinary(a ^ (1 << 3));
-
-    int ct = 0;
-    for (int i = 31; i >= 0; i--)
-    {
-        if ((a & (1 << i)) != 0)
-        {
-            ct++;
-        }
-    }
-    cout << ct << endl;
-
-    cout << __builtin_popcount(a) << endl;
-    cout << __builtin_popcountll((1ll << 35) - 1) << endl;
 }

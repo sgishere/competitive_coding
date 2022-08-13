@@ -25,9 +25,25 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int n,H,M;
+        cin>>n>>H>>M;
+        int min1=H*60+M;
+            vin ans;
+        while(n--){
+            int x,y;
+            cin>>x>>y; //xhrs::ymins
+            int min2=x*60+y;
+            int yola=min2-min1;
+            yola<0?ans.pb(yola+1440):ans.pb(yola);
+        }
+           int lambda=*min_element(all(ans));
+            int a=lambda/60;
+            int b=lambda-a*60;
+            cout<<a<<" "<<b<<endl;
+    }
 return 0;
 
 }

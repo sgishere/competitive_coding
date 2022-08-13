@@ -22,7 +22,10 @@ using namespace std;
 
 int main()
 {
-    // Ordered map
-    cout<<__gcd(2,3);
-    return 0;
+    ios_base::sync_with_stdio(0); 
+    cin.tie(0);
+
+   cout<<int('o')-96;
+return 0;
+
 }

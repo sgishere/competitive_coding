@@ -19,15 +19,34 @@
 #define vpll vector <pll>
 
 using namespace std;
-
+// IN STACK STL WE 
+// PUSH AT THE TOP OF STACK
+// DELETE AT THE TOP OF STACK
+// TOP LOOKS UP FOR TOP ELEMENT
+// JUST LIKE SHADI KI PLATE
+// STACK= Vertical data..
+// QUEUE= Horizontal data..
+void show_stack(stack<int>lola){
+    stack<int>v=lola;
+    while(!v.empty()){
+        cout<<v.top()<<" ";
+        v.pop();
+    }
+}
 int main()
 {
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    stack<int>q;
+    q.push(3);
+    q.push(69);
+    q.push(5);
+    q.push(8);
+    show_stack(q);
+    q.pop();
+    cout<<endl;
+    show_stack(q);
 return 0;
 
 }

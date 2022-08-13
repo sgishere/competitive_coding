@@ -25,9 +25,17 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int A,B,C;
+        cin>>A>>B>>C;
+        if(A==C and B>A)cout<<"YES"<<endl;
+        else if(B==C and A>B)cout<<"YES"<<endl;
+        else if(A==B and A<C)cout<<"YES"<<endl;
+        else if(A==B and A==C)cout<<"YES"<<endl;
+       else cout<<"NO"<<endl;
+    }
 return 0;
 
 }

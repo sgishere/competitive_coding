@@ -25,9 +25,17 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N;
+        cin>>N;
+        cout<<N<<" ";
+        for(int i=1;i<=N-1;i++){
+            cout<<i<<" ";
+        }
+        cout<<endl;
+    }
 return 0;
 
 }

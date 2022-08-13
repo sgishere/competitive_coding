@@ -25,9 +25,27 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N,K;
+        cin>>N>>K;
+        int arr[N];
+        map<int,vector<int> >m;
+        lop(N){
+            cin>>arr[i];
+            m[arr[i]].pb(i);
+        }
+        while(K--){
+            int a,b;
+            cin>>a>>b;
+            if(!(m[a].empty()) and !(m[b].empty())) 
+            {if(m[a][0]<=m[b][m[b].size()-1])cout<<"YES"<<endl;
+            else cout<<"NO"<<endl;
+            }
+            else cout<<"NO"<<endl;
+        }
+    }
 return 0;
 
 }

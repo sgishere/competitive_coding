@@ -25,9 +25,27 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N;
+        cin>>N;
+        int M;
+        cin>>M;
+        int arr[N];
+        lop(N)cin>>arr[i];
+        string S;
+        lop(M)S.pb('B');
+        lop(N){
+            if(arr[i]-1<M-arr[i] and S[arr[i]-1]=='B')
+            S[arr[i]-1]='A';
+            else if(arr[i]-1>M-arr[i] and S[M-arr[i]]=='A')
+            S[arr[i]-1]='A';
+            else
+            S[M-arr[i]]='A';
+        }
+        cout<<S<<endl;
+    }
 return 0;
 
 }

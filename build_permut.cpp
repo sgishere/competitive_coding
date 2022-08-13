@@ -19,32 +19,41 @@
 #define vpll vector <pll>
 
 using namespace std;
-
 int main()
 {
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
-
+    const int n=1e5+10;
+    vll squares(n);
+    lop(n){
+    squares[i]=i*1LL*i;
+    }
     int T;
     cin>>T;
     while(T--){
         int N;
         cin>>N;
-        int arr[N];
-        iota(arr,arr+N,1);
-        cout<<N<<endl;
-        for(int i=1;i<=N;i++){
-            cout<<i<<" ";
-        }cout<<endl;
-        for(int i=0;i<N-1;i++){
-            swap(arr[i],arr[i+1]);
-            for(int j=0;j<N;j++){
-                cout<<arr[j]<<" ";
-            }
-            cout<<endl;
+        vin A(N);
+        vin B(N);
+        lop(N){
+            A[i]=i;
         }
-
+        lop(N){
+            B[i]=i;
+        }
+        ll start=N-1;
+        while(start>=0){
+            ll current=A[start];
+            ll y=*lower_bound(all(squares),current);
+            ll move=y-current;
+            reverse(B.begin()+move,B.begin()+current+1);
+            start=move-1;
+        }
+        lop(N){
+            cout<<B[i]<<" ";
+        }
+        cout<<endl;
     }
 return 0;
 
-}
+}   

@@ -25,9 +25,26 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N;
+        cin>>N;
+        int i=1;
+        vin v;
+       int  k=0;
+        while(N>0){
+            if(i&1)v.pb(3*i-k);
+            else v.pb(3*i-3);
+            i++;
+            k++;
+            N--;
+        }
+        lop(v.size()){
+            cout<<v[i];
+        }
+        cout<<endl;
+    }
 return 0;
 
 }

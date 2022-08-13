@@ -24,10 +24,22 @@ int main()
 {
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
-
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    priority_queue<int>Q;
+    vin v;
+    int n;
+    cin>>n;
+    lop(n){
+        int x;
+        cin>>x;
+        v.pb(x);
+    }
+    for(int x:v)Q.push(x);
+    while(!Q.empty())
+    {
+        cout<<Q.top()<<" ";
+        Q.pop();
+    }    
+    cout<<endl;
 return 0;
 
 }

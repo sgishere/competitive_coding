@@ -25,9 +25,28 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    ll T;
+    cin>>T;
+    while(T--){
+        ll N,L,R;
+        cin>>N>>L>>R;
+        vll ans;
+        ans.pb(L);
+        ll x=L;
+        for(int i=1;i<N;i++){
+            // while(x%(i+1)!=0){
+            //     x++;
+            // }
+            if(x%(i+1)==0)ans.pb(x);
+            else
+            ans.pb(x+(i+1-(x)%(i+1)));
+        }
+        int maxi=*max_element(all(ans));
+        if(maxi>R)cout<<"NO"<<endl;
+        else {cout<<"YES"<<endl;
+        lop(N)cout<<ans[i]<<" ";
+        cout<<endl;}
+    }
 return 0;
 
 }

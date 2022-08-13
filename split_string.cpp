@@ -25,9 +25,22 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N,K;
+        cin>>N>>K;
+        string S;
+        cin>>S;
+        int ct1=0,ct0=0;
+        lop(N){
+            if(S[i]=='1')ct1++;
+            else ct0++;
+        }
+        int diff=abs(ct1-ct0);
+        diff%K==0?cout<<diff/K<<endl:cout<<diff/K+1<<endl;
+        
+    }
 return 0;
 
 }

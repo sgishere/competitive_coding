@@ -25,9 +25,23 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int sum;
+        cin>>sum;
+        int k=9;
+        vin v;
+        while(sum>0){
+            if(sum<=k){v.pb(sum);break;}
+            sum=sum-k;
+           v.pb(k);
+            k--;
+        }
+        reverse(v.begin(),v.end());
+        lop(v.size())cout<<v[i];
+        cout<<endl;
+    }
 return 0;
 
 }

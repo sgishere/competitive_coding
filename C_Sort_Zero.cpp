@@ -24,27 +24,40 @@ int main()
 {
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
-
     int T;
     cin>>T;
     while(T--){
         int N;
         cin>>N;
         int arr[N];
-        iota(arr,arr+N,1);
-        cout<<N<<endl;
-        for(int i=1;i<=N;i++){
-            cout<<i<<" ";
-        }cout<<endl;
-        for(int i=0;i<N-1;i++){
-            swap(arr[i],arr[i+1]);
-            for(int j=0;j<N;j++){
-                cout<<arr[j]<<" ";
-            }
-            cout<<endl;
+        lop(N){
+            cin>>arr[i];
         }
+        map<int,int>m;
+        int j=N-1;
+        for(int i=N-1;i>=0;i--){
+            if(arr[i]<arr[i-1]){
+                j=i-1;
+                break;
+            }
+        }
+        for(int i=j+1;i<N;i++){
+            m[arr[i]]=i;
+        }
+        for(int i=0;i<=j;i++){
+            if(m.find(arr[i])==m.end())continue;
+            else j=max(j,m[arr[i]]);
+        }
+        set<int>s;
+        lop(j+1){
+            s.insert(arr[i]);
+        }
+        if(N==1)cout<<0<<endl;
+        else
+        cout<<s.size()<<endl;
 
     }
+    
 return 0;
 
 }

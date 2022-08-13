@@ -25,9 +25,17 @@ int main()
     ios_base::sync_with_stdio(0); 
     cin.tie(0);
 
-    cout<<"Hello mote";
-    cout<<"Kaisa hai?\n";
-    cout<<"lul";
+    int T;
+    cin>>T;
+    while(T--){
+        int N;
+        cin>>N;
+        int M;
+        cin>>M;
+        int x=(N+M)/2;
+        int ans=max(abs(N-x),abs(M-x));
+        cout<<abs(ans)<<endl;
+    }
 return 0;
 
 }
