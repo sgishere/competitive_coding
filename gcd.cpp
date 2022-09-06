@@ -1,45 +1,38 @@
 #include <bits/stdc++.h>
+using namespace std; 
 
-#define ll long long
-#define pb push_back
-#define ff first
-#define ss second
-
-#define lop(a,n) for (int i = a; i < n; i++)
-#define lopj(n) for (int j = 0; j < n; j++)
-
-#define all(x) x.begin(), x.end()
-#define sortd(x) sort(x.rbegin(), x.rend())
-#define bitcount(x) __builtin_popcount(x)
-
-#define vin vector <int>
-#define vll vector <ll>
-#define pll pair <ll, ll>
-#define pii pair <int, int>
-#define vpll vector <pll>
-
-using namespace std;
-
-int main()
-{
-    ios_base::sync_with_stdio(0); 
-    cin.tie(0);
-
-    int T;
-    cin>>T;
-    while(T--){
-        int N;
-        cin>>N;
-        int sum;
-        cin>>sum;
-        if(sum<N)cout<<-1<<endl;
-        else{
-            cout<<sum-N+1<<" ";
-            lop(1,N+1)
-            if(i!=sum-N+1)cout<<i<<" ";
-            cout<<endl;
+int main(){
+    int X;
+    int Y;
+    cin>>X;
+    cin>>Y;
+    vector<int>xrr;
+    vector<int>yrr;
+    vector<int>commondiv;
+    if(X==0 or Y==0){
+        cout<<0;
+    }
+    else{
+    for(int i=0;i<=X;i++)
+    {
+        if(X%i==0)
+        xrr.push_back(i);
+    }
+    for(int i=0;i<=Y;i++)
+    {
+        if(Y%i==0)
+        yrr.push_back(i);
+    }
+    
+    for(int k=0;k<xrr.size();k++)
+    {
+        for(int x=0;x<yrr.size();x++)
+        {
+            if(xrr[k]==yrr[x])
+            commondiv.push_back(xrr[k]);
         }
     }
+    cout<<"Gcd of two numbers is:"<<*max_element(commondiv.begin(),commondiv.begin()+commondiv.size());
+    }
 return 0;
-
 }
